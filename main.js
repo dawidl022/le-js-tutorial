@@ -1,7 +1,7 @@
 let Phrase = require("dawidl022-palindrome");
 
-function palindromeTester() {
-  let string = prompt("Please enter a string for palindrome testing:");
+function palindromeTester(e) {
+  let string = e.target.phrase.value;
 
   if (string === null) {
     return;
@@ -22,5 +22,8 @@ function palindromeTester() {
 }
 
 const btn = document.querySelector("#palindrome-tester");
-btn.addEventListener("click", palindromeTester);
+btn.addEventListener("submit", function(e) {
+  e.preventDefault();
+  palindromeTester(e);
+});
 
