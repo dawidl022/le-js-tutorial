@@ -10,11 +10,15 @@ function palindromeTester() {
   let phrase = new Phrase(string);
   const palindromeResult = document.querySelector("#palindrome-result");
   
+  const echoedString = palindromeResult.querySelector(".phrase-holder")
+  echoedString.textContent = phrase.content;
+  echoedString.classList.add("phrase")
+  const resultText = palindromeResult.querySelector(".result");
   
   if (phrase.palindrome()) {
-    palindromeResult.textContent = `"${phrase.content}" is a palindrome!`
+    resultText.textContent = "is a palindrome!"
   } else {
-    palindromeResult.textContent =  `"${phrase.content}" is not a palindrome.`;
+    resultText.textContent =  "is not a palindrome.";
   }
 }
 
