@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+let fs = require("fs")
+let Phrase = require("dawidl022-palindrome")
+
+let text = fs.readFileSync("phrases.txt", "utf-8");
+let lines = text.trim().split("\n");
+let palindromes = lines.filter(line => new Phrase(line).palindrome());
+
+palindromes.forEach(function(palindrome) {
+  console.log("Palindrome detected: ", palindrome);
+})
