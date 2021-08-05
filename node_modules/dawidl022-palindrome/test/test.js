@@ -29,9 +29,9 @@ describe("Phrase", function() {
       assert(anotherPunctuatedPalindrome.palindrome())
     });
 
-    it("should return true for an empty string", function() {
+    it("should return false for an empty string", function() {
       let emptyPhrase = new Phrase("");
-      assert(emptyPhrase.palindrome());
+      assert(!emptyPhrase.palindrome());
     })
 
   });
