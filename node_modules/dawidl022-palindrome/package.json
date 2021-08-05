@@ -1,0 +1,24 @@
+{
+  "name": "dawidl022-palindrome",
+  "version": "0.1.0",
+  "description": "Palindrome detector",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawidl022/js-palindrome-detector.git"
+  },
+  "keywords": [
+    "palindrome",
+    "learn-enough",
+    "javascript"
+  ],
+  "author": "dawidl022",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dawidl022/js-palindrome-detector/issues"
+  },
+  "homepage": "https://github.com/dawidl022/js-palindrome-detector#readme"
+}
