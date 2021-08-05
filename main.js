@@ -7,11 +7,13 @@ function palindromeTester() {
     return;
   } 
   let phrase = new Phrase(string);
+  const palindromeResult = document.querySelector("#palindrome-result");
+  
   
   if (phrase.palindrome()) {
-    alert(`"${phrase.content}" is a palindrome!`);
+    palindromeResult.textContent = `"${phrase.content}" is a palindrome!`
   } else {
-    alert(`"${phrase.content}" is not a palindrome.`);
+    palindromeResult.textContent =  `"${phrase.content}" is not a palindrome.`;
   }
 }
 
