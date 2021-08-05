@@ -5,9 +5,15 @@ let Phrase = require("dawidl022-palindrome")
 
 let text = fs.readFileSync("phrases.txt", "utf-8");
 let lines = text.trim().split("\n");
+const outputFilePath = "palindromes.txt"
+
+// clears the current content of output file
+fs.writeFileSync(outputFilePath, "")
 
 lines.forEach(line => {
   if (new Phrase(line).palindrome()) {
     console.log("Palindrome detected:", line);
+    // appends a line at a time to file
+    fs.appendFileSync(outputFilePath, line + "\n");
   }
 });
