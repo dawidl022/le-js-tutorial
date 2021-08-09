@@ -3,12 +3,24 @@
 // Returns the paragraphs from a Wikipedia link, stripped of reference numbers.
 
 const url = process.argv[2];
+
+if (!url) {
+  console.log("Usage: wkip <url-to-parse>");
+  process.exit();
+}
+
 const urllib = require("urllib");
 
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 urllib.request(url, { followRedirect: true }, function(error, data, response) {
+
+  if (!data) {
+    console.log("Unable to get contents of specified URL");
+    process.exit();
+  }
+
   let body = data.toString();
   let { document } = (new JSDOM(body)).window;
 
