@@ -6,10 +6,11 @@ let url = 'https://cdn.learnenough.com/phrases.txt'
 
 urllib.request(url, { followRedirect: true }, function (error, data, response) {
   let body =  data.toString();
-  body.split("\n").forEach(function(line) {
-    let phrase = new Phrase(line);
-    if (phrase.palindrome()) {
-      console.log("palindrome detected:", line);
-    }
+  const lines = body.split("\n");
+  const palindromes = lines.filter(line => new Phrase(line).palindrome());
+
+  palindromes.forEach(palindrome => {
+    console.log("palindrome detected:", palindrome)
   })
+
 });
